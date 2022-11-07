@@ -1,24 +1,31 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "reedtechus/azure-data-explorer-laravel",
+    "description": "Azure Data Explorer SDK for Laravel",
     "keywords": [
-        ":vendor_name",
+        "reedtechus",
         "laravel",
-        ":package_slug"
+        "azure-data-explorer-laravel"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/reedtechus/azure-data-explorer-laravel",
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../azure-data-explorer"
+        }
+    ],
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Chris Reed",
+            "email": "chris@reedtech.us",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
         "spatie/laravel-package-tools": "^1.13.0",
-        "illuminate/contracts": "^9.0"
+        "illuminate/contracts": "^9.0",
+        "reedtechus/azure-data-explorer": "dev-main"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -35,13 +42,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "ReedTech\\AzureDataExplorer\\": "src",
+            "ReedTech\\AzureDataExplorer\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "ReedTech\\AzureDataExplorer\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +68,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "ReedTech\\AzureDataExplorer\\AzureDataExplorerServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "AzureDataExplorer": "ReedTech\\AzureDataExplorer\\Facades\\AzureDataExplorer"
             }
         }
     },

@@ -35,4 +35,7 @@ return [
     // The region of the Azure Data Explorer API.
     'region' => env('AZURE_DATA_EXPLORER_REGION'),
 
+    // The database of the Azure Data Explorer API.
+    'database' => env('AZURE_DATA_EXPLORER_DATABASE'),
+
 ];

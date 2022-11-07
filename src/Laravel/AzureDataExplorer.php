@@ -6,11 +6,6 @@ use ReedTech\AzureDataExplorer\AzureDataExplorerApi;
 
 class AzureDataExplorer extends AzureDataExplorerApi
 {
-    public static function make(): static
-    {
-        return new static();
-    }
-
     public function __construct()
     {
         parent::__construct(

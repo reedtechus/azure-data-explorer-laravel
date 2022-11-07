@@ -3,7 +3,8 @@
 namespace ReedTech\AzureDataExplorer;
 
 use ReedTech\AzureDataExplorer\Commands\AuthTestCommand;
-use ReedTech\AzureDataExplorer\Commands\AzureDataExplorerCommand;
+use ReedTech\AzureDataExplorer\Commands\QueryTestCommand;
+use ReedTech\AzureDataExplorer\Laravel\AzureDataExplorer;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -22,7 +23,7 @@ class AzureDataExplorerServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasMigration('create_azure-data-explorer_table')
             ->hasCommands([
-                AzureDataExplorerCommand::class,
+                QueryTestCommand::class,
                 AuthTestCommand::class,
             ]);
     }

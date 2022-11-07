@@ -28,6 +28,12 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
+        config()->set('azure-data-explorer.tenant_id', 'tenant_id');
+        config()->set('azure-data-explorer.client_id', 'client_id');
+        config()->set('azure-data-explorer.client_secret', 'client_secret');
+        config()->set('azure-data-explorer.region', 'region');
+        config()->set('azure-data-explorer.cluster', 'cluster');
+
         /*
         $migration = include __DIR__.'/../database/migrations/create_azure-data-explorer-laravel_table.php.stub';
         $migration->up();

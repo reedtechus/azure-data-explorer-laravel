@@ -11,6 +11,6 @@ class AzureDataExplorer extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \ReedTech\AzureDataExplorer\AzureDataExplorer::class;
+        return \ReedTech\AzureDataExplorer\Helper\AzureDataExplorer::class;
     }
 }

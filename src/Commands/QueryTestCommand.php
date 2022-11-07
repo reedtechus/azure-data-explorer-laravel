@@ -6,9 +6,9 @@ use Illuminate\Console\Command;
 
 class AzureDataExplorerCommand extends Command
 {
-    public $signature = 'azure:de:test';
+    public $signature = 'azure:de:query:test';
 
-    public $description = 'Command to test the functionality of the package';
+    public $description = 'Perform a test query against Azure Data Explorer';
 
     public function handle(): int
     {

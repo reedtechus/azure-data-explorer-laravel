@@ -20,8 +20,6 @@ class AzureDataExplorerServiceProvider extends PackageServiceProvider
         $package
             ->name('azure-data-explorer')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_azure-data-explorer_table')
             ->hasCommands([
                 QueryTestCommand::class,
                 AuthTestCommand::class,

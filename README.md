@@ -37,6 +37,18 @@ php artisan vendor:publish --tag="azure-data-explorer-laravel-migrations"
 php artisan migrate
 ``` -->
 
+The following environment variables are **required** for this package to work:
+
+```dotenv
+# Azure Data Explorer
+AZURE_DATA_EXPLORER_TENANT_ID="TENANT_ID"
+AZURE_DATA_EXPLORER_CLIENT_ID="CLIENT_ID"
+AZURE_DATA_EXPLORER_CLIENT_SECRET="SECRET"
+AZURE_DATA_EXPLORER_CLUSTER="CLUSTER"
+AZURE_DATA_EXPLORER_REGION="REGION"
+AZURE_DATA_EXPLORER_DATABASE="DATABASE_NAME"
+```
+
 You can publish the config file with:
 
 ```bash

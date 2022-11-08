@@ -7,7 +7,7 @@ use ReedTech\AzureDataExplorer\Data\QueryResultsDTO;
 
 class AzureDataExplorer extends AzureDataExplorerApi
 {
-    public function __construct()
+    final public function __construct()
     {
         parent::__construct(
             config('azure-data-explorer.tenant_id'),
@@ -22,6 +22,6 @@ class AzureDataExplorer extends AzureDataExplorerApi
 
     public static function queryOnce(string|array $query): QueryResultsDTO
     {
-        return (new static())->query($query);
+        return (new self())->query($query);
     }
 }

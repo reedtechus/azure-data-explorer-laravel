@@ -15,20 +15,7 @@ class QueryTestCommand extends Command
     {
         $query = $this->argument('query');
         $de = new AzureDataExplorer();
-        $response = $de->query($query);
-
-        // $request = AzureDataExplorerConnector::query($query);
-        // $response = $request->send();
-        if ($response->failed()) {
-            $this->error('Failed to query Azure Data Explorer');
-            $this->error('Response: '.print_r($response->json(), true));
-
-            return Command::FAILURE;
-        }
-
-        // Handle Successful Response
-        /** @var QueryResultsDTO $results */
-        $results = $response->dto();
+        $results = $de->query($query);
 
         dump('Columns: '.implode(', ', $results->columns));
         dump('Number of Results: '.count($results->data));

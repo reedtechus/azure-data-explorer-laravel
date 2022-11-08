@@ -3,6 +3,7 @@
 namespace ReedTech\AzureDataExplorer\Laravel;
 
 use ReedTech\AzureDataExplorer\AzureDataExplorerApi;
+use ReedTech\AzureDataExplorer\Data\QueryResultsDTO;
 
 class AzureDataExplorer extends AzureDataExplorerApi
 {
@@ -15,8 +16,12 @@ class AzureDataExplorer extends AzureDataExplorerApi
             config('azure-data-explorer.region'),
             config('azure-data-explorer.cluster'),
         );
-        // $api = new AzureDataExplorerApi(
 
-        // );
+        $this->database = config('azure-data-explorer.database');
+    }
+
+    public static function queryOnce(string|array $query): QueryResultsDTO
+    {
+        return (new static())->query($query);
     }
 }

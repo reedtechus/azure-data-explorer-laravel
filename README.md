@@ -9,11 +9,18 @@
 
 This project is a Laravel package that allows you to connect to Azure Data Explorer and execute queries from your Laravel Application.
 
-It is not endorsed or supported by [Microsoft](https://github.com/microsoft) in any way.
+> :warning: **Experimental:** This package is still in development and is not ready for production use.
+> Breaking changes can still occur **without** a major version change until **1.0.0**.
+
+This package is a direct extension of the [Azure Data Explorer SDK for PHP](https://github.com/reedtechus/azure-data-explorer) by [Reed Tech](https://github.com/reedtechus) which provides a PHP SDK to interact with the [Azure Data Explorer REST API](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/rest/).
 
 ## Goals
 
-The goal of this project is to implement the [Azure Data Explorer REST API](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/rest/) via a Laravel friendly interface.
+The goal of this project is to provide a Laravel friendly interface to the [Azure Data Explorer SDK](https://github.com/reedtechus/azure-data-explorer) package.
+
+**Feature Roadmap**
+
+-   [ ] Caching via Redis
 
 ## Installation
 
@@ -23,12 +30,12 @@ You can install the package via composer:
 composer require reedtechus/azure-data-explorer-laravel
 ```
 
-You can publish and run the migrations with:
+<!-- You can publish and run the migrations with:
 
 ```bash
 php artisan vendor:publish --tag="azure-data-explorer-laravel-migrations"
 php artisan migrate
-```
+``` -->
 
 You can publish the config file with:
 
@@ -78,17 +85,34 @@ return [
 ];
 ```
 
-Optionally, you can publish the views using
+<!-- Optionally, you can publish the views using
 
 ```bash
 php artisan vendor:publish --tag="azure-data-explorer-laravel-views"
-```
+``` -->
 
 ## Usage
 
 ```php
-$azureDataExplorer = new ReedTech\AzureDataExplorer();
-echo $azureDataExplorer->echoPhrase('Hello, ReedTech!');
+// Option A: More efficient to save and re-use the AzureDataExplorer class instance for followup queries
+$de = new AzureDataExplorer();
+$results = $de->query($query);
+
+// Option B: you can use the AzureDataExplorer::queryOnce() method to perform the query
+$results = AzureDataExplorer::queryOnce($query);
+```
+
+These calls return a `QueryResultsDTO` object (or throw an exception).
+
+**Using the results**
+
+```php
+
+dump('Columns: '.implode(', ', $results->columns));
+dump('Number of Results: '.count($results->data));
+dump('Execution Time: '.$results->executionTime);
+
+dump('First Row: '.print_r($results->data[0], true));
 ```
 
 ## Testing
@@ -96,6 +120,11 @@ echo $azureDataExplorer->echoPhrase('Hello, ReedTech!');
 ```bash
 composer test
 ```
+
+## Dependencies
+
+-   [Azure Data Explorer REST API](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/rest/)
+-   [Reed Tech's](https://github.com/reedtechus/azure-data-explorer) package, [Azure Data Explorer PHP SDK](https://github.com/reedtechus/azure-data-explorer)
 
 ## Changelog
 
@@ -112,7 +141,9 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Credits
 
 -   [Chris Reed](https://github.com/chrisreedio)
--   [All Contributors](../../contributors)
+<!-- -   [All Contributors](../../contributors) -->
+
+This package is not endorsed nor supported by [Microsoft](https://github.com/microsoft) in any way.
 
 ## License
 

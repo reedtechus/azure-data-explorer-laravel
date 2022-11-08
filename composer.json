@@ -8,13 +8,6 @@
 	],
 	"homepage": "https://github.com/reedtechus/azure-data-explorer-laravel",
 	"license": "MIT",
-	"repositories": [
-		{
-			"type": "path",
-			"url": "~/dev/packages/azure-data-explorer",
-			"canonical": false
-		}
-	],
 	"authors": [
 		{
 			"name": "Chris Reed",

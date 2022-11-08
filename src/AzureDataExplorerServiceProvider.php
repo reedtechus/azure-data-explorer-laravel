@@ -19,11 +19,11 @@ class AzureDataExplorerServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('azure-data-explorer')
-            ->hasConfigFile()
-            ->hasCommands([
-                QueryTestCommand::class,
-                AuthTestCommand::class,
-            ]);
+            // ->hasCommands([
+            //     QueryTestCommand::class,
+            //     AuthTestCommand::class,
+            // ])
+            ->hasConfigFile();
     }
 
     public function packageRegistered()

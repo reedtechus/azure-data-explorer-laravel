@@ -36,8 +36,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"ReedTech\\AzureDataExplorer\\": "src",
-			"ReedTech\\AzureDataExplorer\\Database\\Factories\\": "database/factories"
+			"ReedTech\\AzureDataExplorer\\": "src"
 		}
 	},
 	"autoload-dev": {

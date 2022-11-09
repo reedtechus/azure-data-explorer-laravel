@@ -4,6 +4,8 @@ namespace ReedTech\AzureDataExplorer\Laravel;
 
 use ReedTech\AzureDataExplorer\AzureDataExplorerApi;
 use ReedTech\AzureDataExplorer\Data\QueryResultsDTO;
+use ReedTech\AzureDataExplorer\Interfaces\IngestModelInterface;
+use Sammyjo20\Saloon\Http\SaloonResponse;
 
 class AzureDataExplorer extends AzureDataExplorerApi
 {
@@ -23,5 +25,10 @@ class AzureDataExplorer extends AzureDataExplorerApi
     public static function queryOnce(string|array $query): QueryResultsDTO
     {
         return (new self())->query($query);
+    }
+
+    public static function ingestOnce(IngestModelInterface $model): SaloonResponse
+    {
+        return (new self())->ingest($model);
     }
 }

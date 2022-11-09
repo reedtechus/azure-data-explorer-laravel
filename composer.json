@@ -1,73 +1,73 @@
 {
-	"name": "reedtechus/azure-data-explorer-laravel",
-	"description": "Azure Data Explorer SDK for Laravel",
-	"keywords": [
-		"reedtechus",
-		"laravel",
-		"azure-data-explorer-laravel"
-	],
-	"homepage": "https://github.com/reedtechus/azure-data-explorer-laravel",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Chris Reed",
-			"email": "chris@reedtech.us",
-			"role": "Developer"
-		}
-	],
-	"require": {
-		"php": "^8.1",
-		"illuminate/contracts": "^9.0",
-		"reedtechus/azure-data-explorer": "^0.1.0",
-		"spatie/laravel-package-tools": "^1.13.0"
-	},
-	"require-dev": {
-		"laravel/pint": "^1.0",
-		"nunomaduro/collision": "^6.0",
-		"nunomaduro/larastan": "^2.0.1",
-		"orchestra/testbench": "^7.0",
-		"pestphp/pest": "^1.21",
-		"pestphp/pest-plugin-laravel": "^1.1",
-		"phpstan/extension-installer": "^1.1",
-		"phpstan/phpstan-deprecation-rules": "^1.0",
-		"phpstan/phpstan-phpunit": "^1.0",
-		"phpunit/phpunit": "^9.5",
-		"spatie/laravel-ray": "^1.26"
-	},
-	"autoload": {
-		"psr-4": {
-			"ReedTech\\AzureDataExplorer\\": "src"
-		}
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"ReedTech\\AzureDataExplorer\\Tests\\": "tests"
-		}
-	},
-	"scripts": {
-		"post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-		"analyse": "vendor/bin/phpstan analyse",
-		"test": "vendor/bin/pest",
-		"test-coverage": "vendor/bin/pest --coverage",
-		"format": "vendor/bin/pint"
-	},
-	"config": {
-		"sort-packages": true,
-		"allow-plugins": {
-			"pestphp/pest-plugin": true,
-			"phpstan/extension-installer": true
-		}
-	},
-	"extra": {
-		"laravel": {
-			"providers": [
-				"ReedTech\\AzureDataExplorer\\AzureDataExplorerServiceProvider"
-			],
-			"aliases": {
-				"AzureDataExplorer": "ReedTech\\AzureDataExplorer\\Facades\\AzureDataExplorer"
-			}
-		}
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+    "name": "reedtechus/azure-data-explorer-laravel",
+    "description": "Azure Data Explorer SDK for Laravel",
+    "keywords": [
+        "reedtechus",
+        "laravel",
+        "azure-data-explorer-laravel"
+    ],
+    "homepage": "https://github.com/reedtechus/azure-data-explorer-laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Reed",
+            "email": "chris@reedtech.us",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^9.0",
+        "reedtechus/azure-data-explorer": "^0.1.1",
+        "spatie/laravel-package-tools": "^1.13.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "ReedTech\\AzureDataExplorer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ReedTech\\AzureDataExplorer\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ReedTech\\AzureDataExplorer\\AzureDataExplorerServiceProvider"
+            ],
+            "aliases": {
+                "AzureDataExplorer": "ReedTech\\AzureDataExplorer\\Facades\\AzureDataExplorer"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

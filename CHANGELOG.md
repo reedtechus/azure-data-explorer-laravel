@@ -2,6 +2,10 @@
 
 All notable changes to `azure-data-explorer-laravel` will be documented in this file.
 
+## v0.2.0 - 2023-01-24
+
+Auth and Queries are working with Saloon v2.
+
 ## v0.1.0 - 2022-11-09
 
 ### New Feature - Streaming Ingestion

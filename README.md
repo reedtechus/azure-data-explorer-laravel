@@ -153,7 +153,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Credits
 
 -   [Chris Reed](https://github.com/chrisreedio)
-<!-- -   [All Contributors](../../contributors) -->
+-   [All Contributors](../../contributors)
 
 This package is not endorsed nor supported by [Microsoft](https://github.com/microsoft) in any way.
 

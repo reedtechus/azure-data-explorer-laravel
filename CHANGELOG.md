@@ -2,6 +2,10 @@
 
 All notable changes to `azure-data-explorer-laravel` will be documented in this file.
 
+## v0.2.1 - 2023-01-31
+
+Updated to latest version of the ADX library.
+
 ## v0.2.0 - 2023-01-24
 
 Auth and Queries are working with Saloon v2.

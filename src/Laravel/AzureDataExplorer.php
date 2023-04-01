@@ -22,9 +22,18 @@ class AzureDataExplorer extends AzureDataExplorerApi
         $this->database = config('azure-data-explorer.database');
     }
 
+    public static function queryV1Once(string|array $query): QueryResultsDTO
+    {
+        return (new self())->queryV1($query);
+    }
+
     public static function queryOnce(string|array $query): QueryResultsDTO
     {
-        return (new self())->query($query);
+        if ((is_array($query) && str_starts_with($query[0], '.')) || (is_string($query) && str_starts_with($query, '.'))) {
+            return (new self())->queryV1($query);
+        } else {
+            return (new self())->query($query);
+        }
     }
 
     public static function ingestOnce(IngestModelInterface $model): Response
